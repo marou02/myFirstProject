@@ -1,0 +1,28 @@
+<div class="col-md-12">
+  <h1>{{title}}</h1>
+
+  <table border="1">
+    <tr><th>title</th><th>price</th><th>quantity</th><th>like</th></tr>
+    <tr *ngFor="let product of listProduct; let i = index">
+      <td>{{product.title}}</td>
+      <td>{{product.price}}</td>
+      <td>{{product.quantity}}</td>
+      <td>{{product.like}} <button (click)="incrementLike(product)">Like</button></td>
+      <td><button [disabled]="product.quantity==0" (click)="decQuant(i)">buy</button></td>
+    </tr>
+  </table>
+  <div class="form-group">
+    <label>Search Price</label>
+    <input class="form-control col-md-6" type="number" name="priceMax" [(ngModel)]="priceMax" >
+  </div>
+  <br><br>
+  <app-form-product (eventAddProduct)="addProduct($event)"></app-form-product>
+  <div class="row">
+    <app-product *ngFor="let p of listProduct; let i = index" class="col-md-3"
+                 [product]="p"
+                 [priceMaxInput]="priceMax"
+                 (incrementEvent)="incrementLike($event)" >
+    </app-product>
+  </div>
+</div>
+git 

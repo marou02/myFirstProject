@@ -1,0 +1,10 @@
+<div class="card" style="width: 18rem;" *ngIf="product.price<priceMaxInput" >
+  <img src="assets/img.jpg" class="card-img-top" alt="...">
+  <div class="card-body">
+    <h5 class="card-title">{{product.title}}</h5>
+    <p class="card-text">Price : {{product.price}}</p>
+    <p class="card-text">{{product.like}}</p>
+    <a href="#" class="btn btn-primary" (click)="sendNotif()">Like</a>
+    <button class="btn btn-success" [disabled]="product.quantity==0" >buy</button>
+  </div>
+</div>

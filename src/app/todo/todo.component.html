@@ -1,0 +1,12 @@
+<div class="card" style="width: 18rem;">
+  <div class="card-body" [style.background-color]="todo.completed? 'lightGreen':'lightBlue'">
+    <h5 class="card-title">{{todo.title}}</h5>
+    <h6 class="card-subtitle mb-2 text-muted">State : {{todo.completed}}</h6>
+    <p class="card-text">UserId : {{todo.userId}}</p>
+    <button class="btn btn-success"
+            [hidden]="todo.completed"
+            (click)="notifParent()">
+      Cmplete
+    </button>
+  </div>
+</div>
