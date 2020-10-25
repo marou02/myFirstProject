@@ -16,7 +16,13 @@
     <input class="form-control col-md-6" type="number" name="priceMax" [(ngModel)]="priceMax" >
   </div>
   <br><br>
-  <app-form-product (eventAddProduct)="addProduct($event)"></app-form-product>
+
+  <button class="btn btn-warning" (click)="AfficherProduit()"> Add product </button>
+  <br>
+  <button class="btn btn-warning" (click)="getStat()"> Etat </button>
+  {{n}}
+  <br>
+  <app-form-product (eventAddProduct)="addProduct($event)" *ngIf="etatProduit"></app-form-product>
   <div class="row">
     <app-product *ngFor="let p of listProduct; let i = index" class="col-md-3"
                  [product]="p"
@@ -25,4 +31,4 @@
     </app-product>
   </div>
 </div>
-git 
+

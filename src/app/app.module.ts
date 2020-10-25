@@ -9,6 +9,7 @@ import { TodoComponent } from './todo/todo.component';
 import {HomeComponent} from './home/home.component';
 import {HomeTodoComponent} from './home-todo/home-todo.component';
 import { FormProductComponent } from './form-product/form-product.component';
+import { TemplateDrivenFormComponentComponent } from './template-driven-form-component/template-driven-form-component.component';
 
 
 @NgModule({
@@ -18,7 +19,8 @@ import { FormProductComponent } from './form-product/form-product.component';
     ProductComponent,
     HomeTodoComponent,
     TodoComponent,
-    FormProductComponent
+    FormProductComponent,
+    TemplateDrivenFormComponentComponent
   ],
   imports: [
     BrowserModule,

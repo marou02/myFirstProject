@@ -1,6 +1,15 @@
-<div class="row">
-<app-todo *ngFor="let t of listTodo" [todo]="t" (event)="changeEtat(t)">
+<button class="btn btn-warning" (click)="getComplet()"> Get Completed </button>
+<br><br>
+{{comptTodo}}
+<br><br>
+<div class="row col-md-3">
 
+  <app-todo *ngFor="let t of listTodo" [todo]="t" (event)="changeEtat(t)">
 
-</app-todo>
+  </app-todo>
+
 </div>
+
+<app-template-driven-form-component>
+
+</app-template-driven-form-component>

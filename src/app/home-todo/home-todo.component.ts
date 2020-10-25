@@ -1,5 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import {Todo} from '../model/todo';
+import {User} from '../model/user';
+import {ProductService} from '../services/product.service';
 
 @Component({
   selector: 'app-home-todo',
@@ -8,9 +10,12 @@ import {Todo} from '../model/todo';
 })
 export class HomeTodoComponent implements OnInit {
   listTodo: Todo[];
-  constructor() { }
+  listUser: User[];
+  comptTodo: number;
+  constructor(private calcul: ProductService) { }
 
   ngOnInit(): void {
+    this.comptTodo = 0;
     this.listTodo = [
       {userId: 12, id: 1, title: 'task 1', completed: false },
       {userId: 12, id: 2, title: 'task 2', completed: false },
@@ -22,6 +27,18 @@ export class HomeTodoComponent implements OnInit {
   changeEtat(t: Todo){
     let i = this.listTodo.indexOf(t);
     this.listTodo[i].completed = true;
+  }
+
+  getCompleted(){
+    for (let i in this.listTodo){
+      if (this.listTodo[i].completed){
+        this.comptTodo++;
+      }
+    }
+  }
+
+  getComplet(){
+    this.comptTodo = this.calcul.getStat(this.listTodo, 'completed', true);
   }
 
 }
