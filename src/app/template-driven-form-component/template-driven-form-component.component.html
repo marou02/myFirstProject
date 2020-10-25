@@ -1,0 +1,13 @@
+User Form
+<form>
+  <div class="form-group">
+    <label>Nom:</label>
+    <div>
+      <input type="text" name="nom" class="form-control col-md-3"
+             [(ngModel)]="user.nom" #n="ngModel" minlength="3">
+      <div class="alert-danger col-md-3" *ngIf="n.invalid">
+        min 3 Caractères
+      </div>
+    </div>
+  </div>
+</form>
